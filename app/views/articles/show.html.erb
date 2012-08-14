@@ -1,3 +1,9 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
-<%= link_to "<< Back to Articles", articles_path %>
+&lt;&lt;
+<%= link_to "Back to Articles", articles_path %>
+|
+<%= link_to "Edit", edit_article_path(@article) %>
+|
+<%= link_to "Delete This Article", @article, method: :delete,
+    confirm: "Do you REALLY want to delete '#{@article.title}'?" %>
