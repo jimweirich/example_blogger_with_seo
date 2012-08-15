@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120815214518) do
+ActiveRecord::Schema.define(:version => 20120815221916) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -57,5 +57,8 @@ ActiveRecord::Schema.define(:version => 20120815214518) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "url_mappings", ["seo"], :name => "index_url_mappings_on_seo", :unique => true
+  add_index "url_mappings", ["url"], :name => "index_url_mappings_on_url", :unique => true
 
 end

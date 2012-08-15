@@ -5,7 +5,7 @@
 [
 <%= link_to "Edit", edit_article_path(@article) %>
 |
-<%= link_to "Delete This Article", @article, method: :delete,
+<%= link_to "Delete", @article, method: :delete,
     confirm: "Do you REALLY want to delete '#{@article.title}'?" %>
 ]<br /><br />
 
@@ -13,6 +13,13 @@
   <b>Tags:</b>
   <%= tag_links(@article.tags) %>
 </p>
+
+<% if @article.seo_term %>
+<p>
+  <b>SEO:</b>
+  <%= @article.seo_term %>
+</p>
+<% end %>
 
 <hr />
 <p>
