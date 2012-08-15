@@ -8,9 +8,7 @@
 </head>
 <body>
 
-<%= flash.keys.each do |key| %>
-<p class="flash"><%= flash[key] %></p>
-<% end %>
+<%= render "layouts/flash_messages" %>
 
 <%= yield %>
 

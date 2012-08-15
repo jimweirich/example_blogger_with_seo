@@ -7,4 +7,8 @@ class Tag < ActiveRecord::Base
   def to_s
     name
   end
+
+  def self.all_tags
+    order(:name)
+  end
 end
