@@ -1,0 +1,11 @@
+<% if model.errors.any? %>
+<p>
+  Unable to save <%= model.class.name.humanize.downcase %> due to the
+following errors:
+</p>
+<ul>
+  <% model.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>

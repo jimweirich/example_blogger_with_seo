@@ -1,5 +1,10 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
+
+<h3>Comments (<%= @article.comments.count %>)</h3>
+<%= render partial: "comment", collection: @article.comments %>
+<%= render partial: "comment_form" %>
+
 &lt;&lt;
 <%= link_to "Back to Articles", articles_path %>
 |

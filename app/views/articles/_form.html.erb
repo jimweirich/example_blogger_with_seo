@@ -1,9 +1,5 @@
 <%= form_for(@article) do |f| %>
-<ul>
-  <% @article.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
-  <% end %>
-</ul>
+<%= render "shared/errors", model: @article %>
 <p>
   <%= f.label :title %><br />
   <%= f.text_field :title %>
@@ -14,5 +10,6 @@
 </p>
 <p>
   <%= f.submit %>
+  <%= link_to "Cancel", @article %>
 </p>
 <% end %>
